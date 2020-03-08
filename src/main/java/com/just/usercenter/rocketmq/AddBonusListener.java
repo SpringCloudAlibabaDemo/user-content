@@ -1,3 +1,4 @@
+/*
 package com.just.usercenter.rocketmq;
 
 import com.just.usercenter.dao.user.BonusEventLogMapper;
@@ -15,7 +16,7 @@ import java.util.Date;
 
 @Service
 @Slf4j
-@RocketMQMessageListener(consumerGroup = "consumer-group",topic = "add-bonus")
+//@RocketMQMessageListener(consumerGroup = "consumer-group",topic = "add-bonus")
 public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDTO> {
 
     @Autowired
@@ -28,7 +29,8 @@ public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDTO> {
     public void onMessage(UserAddBonusMsgDTO message) {
         //当收到信息的时候，执行的业务
         //1 为用户加积分
-        Integer userId = message.getUserId();
+        */
+/*Integer userId = message.getUserId();
         Integer bonus = message.getBonus();
         User user = userMapper.selectByPrimaryKey(userId);
         user.setBonus(user.getBonus()+message.getBonus());
@@ -43,6 +45,8 @@ public class AddBonusListener implements RocketMQListener<UserAddBonusMsgDTO> {
                         .description("投稿加积分..")
                         .build()
         );
-        log.info("积分添加完毕...");
+        log.info("积分添加完毕...");*//*
+
     }
 }
+*/

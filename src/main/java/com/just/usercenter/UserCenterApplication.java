@@ -6,7 +6,7 @@ import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Sink;
 import tk.mybatis.spring.annotation.MapperScan;
 
-@MapperScan("com.just")
+@MapperScan("com.just.usercenter.dao")
 @SpringBootApplication
 @EnableBinding(Sink.class)
 public class UserCenterApplication {

@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/user_center?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=TRUE&useSSL=false&serverTimezone=Asia/Shanghai
     hikari:
       username: root
-      password:
+      password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
   cloud:
     nacos:
@@ -22,12 +22,19 @@ spring:
           name-server: 127.0.0.1:9876
       bindings:
         input:
-          destination: stream-test-topic
+          destination: add-bonus
           #一定要设置 rocket MQ
           #如果用的是其他MQ，这个可以不用设置
           group: binder-group
+#        my-input:
+#          destination: stream-my-topic
+#          group: my-group
   application:
     name: user-center
 
-rocketmq:
-  name-server: 127.0.0.1:9876
+#rocketmq:
+#  name-server: 127.0.0.1:9876
+
+logging:
+  level:
+    com.alibaba.nacos: error
